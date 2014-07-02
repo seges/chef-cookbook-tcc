@@ -109,9 +109,13 @@ Installs general environmnent for all instances. Utilizes TCC's central resource
 
 In the wrapper cookbook you have to create CSV resource templates in the pattern:
 
-```resources-<type>.csv.<environment>.erb```
+```
+resources-<type>.csv.<environment>.erb
+```
 
-```setenv.csv.<environment>.erb```
+```
+setenv.csv.<environment>.erb
+```
 
 where:
 

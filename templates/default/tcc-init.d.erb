@@ -1,0 +1,32 @@
+#! /bin/sh
+# chkconfig: 2345 95 20
+# description: Tomcat Control Center instances
+# This startup script executes all TCC instances
+# processname: <%= @service_name %>
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+DESC="Tomcat Control Center"
+NAME=<%= @service_name %>
+DAEMON=<%= @location %>/bin/control-instances
+SCRIPTNAME=/etc/init.d/$NAME
+
+# Exit if the package is not installed
+[ -x "$DAEMON" ] || exit 0
+
+
+case "$1" in
+start)
+$DAEMON start
+;;
+stop)
+$DAEMON stop_force
+;;
+restart|force-reload)
+$DAEMON backup_logs_restart_force
+;;
+*)
+echo "Usage: $SCRIPTNAME {start|stop|restart|force-reload}" >&2
+exit 3
+;;
+esac
+:

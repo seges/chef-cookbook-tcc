@@ -1,0 +1,7 @@
+<% @instances.each do |name,params| %>
+<%= name %>.tmpl=<%= params.template %>
+<%= name %>.user=<%= params.user %>
+	<% if params.has_key?("startup") && !params.startup? %>
+<%= name %>.startup=false
+	<% end %>
+<% end %>

@@ -1,0 +1,18 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+- name: ubuntu-12.04
+  driver_config:
+    box: opscode-ubuntu-12.04
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+    use_cachier_plugin: true
+    username: "kva"
+suites:
+- name: default
+  run_list: ["recipe[apt]", "recipe[tcc]"]
+  attributes:
+    tcc:
+      bundle_url: "http://localhost/chef/tcc-1.3.0.tar.gz"

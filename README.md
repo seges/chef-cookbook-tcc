@@ -25,25 +25,31 @@ Attributes
     <td><tt>['tcc']['user']</tt></td>
     <td>String</td>
     <td>Main TCC user (not particular instance user)</td>
-    <td><tt></tt></td>
+    <td><tt>tcc</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['tcc']['group']</tt></td>
+    <td>String</td>
+    <td>Main TCC group</td>
+    <td><tt>tcc</tt></td>
   </tr>
   <tr>
     <td><tt>['tcc']['home']</tt></td>
     <td>String</td>
     <td>Where TCC home is and later the TCC installation is usually placed - usually at TCC's user home</td>
-    <td><tt></tt></td>
+    <td><tt>e.g. /home/tcc</tt></td>
   </tr>
   <tr>
     <td><tt>['tcc']['location']</tt></td>
     <td>String</td>
     <td>Where TCC installation resides - usually at TCC's user home/platform/tcc</td>
-    <td><tt></tt></td>
+    <td><tt>/home/tcc/tcc</tt></td>
   </tr>
   <tr>
-    <td><tt>['tcc']['url']</tt></td>
+    <td><tt>['tcc']['bundle_url']</tt></td>
     <td>String</td>
     <td>Where to download TCC bundle (tar.gz) from</td>
-    <td><tt></tt></td>
+    <td><tt>http://seges.github.io/download/tcc/tcc-1.5.1.tar.gz</tt></td>
   </tr>
 
 </table>

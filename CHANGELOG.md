@@ -3,9 +3,9 @@ tcc CHANGELOG
 
 This file is used to list changes made in each version of the tcc cookbook.
 
-0.1.0
+1.0.3
 -----
-- [your_name] - Initial release of tcc
+- Ladislav Gazo - TCC bundle downloads from public seges.github.io page
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

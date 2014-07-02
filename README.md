@@ -2,6 +2,8 @@ tcc Cookbook
 ============
 Handles the installation and configuration of Tomcat Control Center environment and its instances.
 
+https://github.com/seges/tomcat-control-center
+
 Requirements
 ------------
 

@@ -7,6 +7,9 @@ This file is used to list changes made in each version of the tcc cookbook.
 -----
 - Ladislav Gazo - TCC bundle downloads from public seges.github.io page
 
+1.0.4
+- Ladislav Gazo - NewRelic logs directory per instance and newest Java NewRelic agent
+
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 

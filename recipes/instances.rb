@@ -125,5 +125,23 @@ node.tcc.instances.each do |key,item|
     ignore_failure true
   end
 
+  service_name = "tcc-#{key}"
+
+  template "/etc/init.d/#{service_name}" do
+    action :create_if_missing
+    owner "root"
+    mode 00700
+    source "tcc-init.d.erb"
+    variables(
+      :service_name => key,
+      :location => node.tcc.location,
+      :user => item.user
+    )
+  end
+
+  service service_name do
+    action [ :enable ]
+  end
+
 end
 

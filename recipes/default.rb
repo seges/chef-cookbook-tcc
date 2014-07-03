@@ -8,7 +8,6 @@
 #
 
 tcc_down_path = "#{Chef::Config['file_cache_path']}/#{node.tcc.bundle_name}"
-service_name = "tcc-#{node.tcc.user}"
 
 group node.tcc.group 
 
@@ -45,21 +44,5 @@ bash "extract_tcc" do
     chmod -R g+rw #{node.tcc.location}
     chmod ug+x #{node.tcc.location}/bin/*
     EOH
-end
-
-template "/etc/init.d/#{service_name}" do
-  action :create_if_missing
-  owner "root"
-  mode 00700
-  source "tcc-init.d.erb"
-  variables(
-    :service_name => service_name,
-    :location => node.tcc.location,
-    :user => node.tcc.user
-  )
-end
-
-service service_name do
-  action [ :enable ]
 end
 

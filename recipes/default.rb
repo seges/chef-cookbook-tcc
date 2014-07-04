@@ -46,3 +46,23 @@ bash "extract_tcc" do
     EOH
 end
 
+# one startup script per TCC environment installation
+service_name = "tcc-#{node.tcc.user}"
+
+template "/etc/init.d/#{service_name}" do
+  action :create_if_missing
+  owner "root"
+  mode 00700
+  source "tcc-init.d.erb"
+  variables(
+    :service_name => node.tcc.user,
+    :location => node.tcc.location,
+    :user => node.tcc.user
+  )
+end
+
+  service service_name do
+    action [ :enable ]
+  end
+
+
